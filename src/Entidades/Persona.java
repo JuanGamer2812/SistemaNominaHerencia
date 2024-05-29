@@ -82,15 +82,23 @@ public class Persona {
     }
 
     public int CalcularEdad() {
-        int edad2 = 0;
-        LocalDate edad1 = FechaNaci.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int edad;
+        LocalDate fecnac = FechaNaci.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDate fechactual = LocalDate.now();
-        edad2 = Period.between(edad1, fechactual).getYears();
-        return edad2;
+        edad = Period.between(fecnac, fechactual).getYears();
+        return edad;
     }
 
     public String Edad() {
-        return CalcularEdad() + "";
+        int edad, meses, dias;
+        String edadcompleta = "";
+        LocalDate fecnac = FechaNaci.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate fechactual = LocalDate.now();
+        edad = Period.between(fecnac, fechactual).getYears();
+        meses = Period.between(fecnac, fechactual).getMonths();
+        dias = Period.between(fecnac, fechactual).getDays();
+        edadcompleta = edad + " años, " + meses + " meses, " + dias + " días";
+        return edadcompleta;
     }
 
     public String SignoZodiacal() {
@@ -131,7 +139,8 @@ public class Persona {
         return "Código: " + Codigo + "\n"
                 + "Nombres: " + Nombre + "\n"
                 + "Apellidos: " + Apellido + "\n"
-                + "Edad: " + Edad() + "\n"
+                + "Edad: " + CalcularEdad() + "\n"
+                + "Edad Completa: " + Edad() + "\n"
                 + "Signo Zodiacal: " + SignoZodiacal() + "\n"
                 + "Sexo: " + Sexo + "\n"
                 + "Estado: " + Estado;
