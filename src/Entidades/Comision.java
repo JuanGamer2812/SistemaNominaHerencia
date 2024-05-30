@@ -46,7 +46,9 @@ public class Comision extends Persona {
         return (VentasBrutas * Porcentaje) / 100;
     }
 
-    public void Imprimircomision() {
-        JOptionPane.showMessageDialog(null, Imprimir() + "\n" + "Sueldo a cobrar: $" + CalcularSueldo());
+    public void ImprimirComision() {
+        StringBuilder ImprimirComision = new StringBuilder();
+        ImprimirComision.append(Imprimir()).append("\n").append("Sueldo a cobrar: $").append(CalcularSueldo());
+        JOptionPane.showMessageDialog(null, ImprimirComision);
     }
 }

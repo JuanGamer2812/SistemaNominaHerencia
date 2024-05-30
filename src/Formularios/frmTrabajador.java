@@ -342,7 +342,7 @@ public class frmTrabajador extends javax.swing.JFrame {
         }
         if (tipo.equals("Comision")) {
             cs = new Comision(cod, nom, ape, fec, sex, est, v1, v2);
-            cs.Imprimircomision();
+            cs.ImprimirComision();
         }
         if (tipo.equals("Asalariado Comision")) {
             ac = new AsalariadoComision(cod, nom, ape, fec, sex, est, v1, v2, v3);

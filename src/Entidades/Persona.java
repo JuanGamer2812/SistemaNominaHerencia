@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  * @author Juan
@@ -136,13 +137,15 @@ public class Persona {
     }
 
     public String Imprimir() {
-        return "Código: " + Codigo + "\n"
-                + "Nombres: " + Nombre + "\n"
-                + "Apellidos: " + Apellido + "\n"
-                + "Edad: " + CalcularEdad() + "\n"
-                + "Edad Completa: " + Edad() + "\n"
-                + "Signo Zodiacal: " + SignoZodiacal() + "\n"
-                + "Sexo: " + Sexo + "\n"
-                + "Estado: " + Estado;
+        StringBuilder Imprimir = new StringBuilder();
+        Imprimir.append("Código: ").append(Codigo).append("\n")
+                .append("Nombres: ").append(Nombre).append("\n")
+                .append("Apellidos: ").append(Apellido).append("\n")
+                .append("Edad: ").append(CalcularEdad()).append("\n")
+                .append("Edad Completa: ").append(Edad()).append("\n")
+                .append("Signo Zodiacal: ").append(SignoZodiacal()).append("\n")
+                .append("Sexo: ").append(Sexo).append("\n")
+                .append("Estado: ").append(Estado);
+        return Imprimir.toString();
     }
 }

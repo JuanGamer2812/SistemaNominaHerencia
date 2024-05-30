@@ -53,6 +53,8 @@ public class Horas extends Persona {
     }
 
     public void ImprimirHoras() {
-        JOptionPane.showMessageDialog(null, Imprimir() + "\n" + "Sueldo a cobrar: $" + CalcularSueldo());
+        StringBuilder ImprimirHoras = new StringBuilder();
+        ImprimirHoras.append(Imprimir()).append("\n").append("Sueldo a cobrar: $").append(CalcularSueldo());
+        JOptionPane.showMessageDialog(null, ImprimirHoras);
     }
 }

@@ -39,6 +39,8 @@ public class Asalariado extends Persona {
     }
 
     public void ImprimirAsalariado() {
-        JOptionPane.showMessageDialog(null, Imprimir() + "\n" + "Sueldo a cobrar: $" + CalcularSueldo());
+        StringBuilder ImprimirAsalariado = new StringBuilder();
+        ImprimirAsalariado.append(Imprimir()).append("\n").append("Sueldo a cobrar: $").append(CalcularSueldo());
+        JOptionPane.showMessageDialog(null, ImprimirAsalariado);
     }
 }

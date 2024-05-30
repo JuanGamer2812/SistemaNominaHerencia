@@ -38,6 +38,8 @@ public class AsalariadoComision extends Comision {
     }
 
     public void ImprimirAC() {
-        JOptionPane.showMessageDialog(null, Imprimir() + "\n" + "Sueldo a cobrar: $" + CalcularSueldo());
+        StringBuilder ImprimirAC = new StringBuilder();
+        ImprimirAC.append(Imprimir()).append("\n").append("Sueldo a cobrar: $").append(CalcularSueldo());
+        JOptionPane.showMessageDialog(null, ImprimirAC);
     }
 }
